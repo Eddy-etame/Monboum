@@ -1,0 +1,162 @@
+.offers {
+  background: var(--color-dark);
+}
+
+.offers__promos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: var(--gap-xl);
+}
+
+.offers__card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 240px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.offers__card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+}
+
+.offers__card-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offers__card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.offers__card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.offers__card-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.offers__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-white);
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.offers__card-decor {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* Newsletter */
+.offers__newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem 2.5rem;
+}
+
+.offers__newsletter-text {
+  & h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  & p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.offers__newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.offers__newsletter-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.offers__newsletter-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.offers__newsletter-input {
+  padding: 0.8rem 1rem 0.8rem 2.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+  background: var(--color-dark-elevated);
+  color: var(--color-text);
+  width: 280px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+
+  &:focus {
+    border-color: var(--color-primary-light);
+  }
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+}
+
+@media (max-width: 767px) {
+  .offers__promos {
+    grid-template-columns: 1fr;
+  }
+
+  .offers__newsletter {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem;
+  }
+
+  .offers__newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .offers__newsletter-input {
+    width: 100%;
+  }
+}
